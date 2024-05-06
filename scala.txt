@@ -1,0 +1,4 @@
+spark-shell
+val text=sc.textFile("my_text.txt")
+val counts=text.flatMap(line=>line.split(" ")).map(word=>(word,1)).reduceByKey(_+_)
+counts.collect
